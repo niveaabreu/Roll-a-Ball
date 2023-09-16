@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 	
 	// Create public variables for player speed, and for the Text UI game objects
 	public float speed;
 	public TextMeshProUGUI countText;
+
+	public TextMeshProUGUI tempoTexto;
+
+	private float tempo;
 	public GameObject winTextObject;
 
-        private float movementX;
-        private float movementY;
+	private float movementX;
+	private float movementY;
 
 	private Rigidbody rb;
 	private int count;
@@ -26,10 +32,23 @@ public class PlayerController : MonoBehaviour {
 		// Set the count to zero 
 		count = 0;
 
+		tempo = 60.0f;
+
 		SetCountText ();
 
                 // Set the text property of the Win Text UI to an empty string, making the 'You Win' (game over message) blank
         winTextObject.SetActive(false);
+	}
+
+	void Update(){
+		if (tempo > 0){
+			tempo = tempo - Time.deltaTime;
+			tempoTexto.text = Convert.ToInt32(tempo).ToString();
+		}
+		else{
+			SceneManager.LoadScene("Scenes/MenuInicial");
+		}
+		
 	}
 
 	void FixedUpdate ()
