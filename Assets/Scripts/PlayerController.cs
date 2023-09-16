@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
 			tempoTexto.text = Convert.ToInt32(tempo).ToString();
 		}
 		else{
-			SceneManager.LoadScene("Scenes/MenuInicial");
+			SceneManager.LoadScene("Scenes/over");
 		}
 		
 	}
@@ -84,12 +84,13 @@ public class PlayerController : MonoBehaviour {
 
         void SetCountText()
 	{
-		countText.text = "Count: " + count.ToString();
+		countText.text = "Coconuts: " + count.ToString() +"/12";
 
 		if (count >= 12) 
 		{
-                    // Set the text value of your 'winText'
-                    winTextObject.SetActive(true);
+			// Set the text value of your 'winText'
+			winTextObject.SetActive(true);
+			SceneManager.LoadScene("Scenes/won");
 		}
 	}
 }

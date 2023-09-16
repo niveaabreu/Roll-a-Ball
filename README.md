@@ -17,3 +17,9 @@ https://www.google.com/url?sa=i&url=https%3A%2F%2Fforum.unity.com%2Fthreads%2Fbe
 https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633
 
 https://sketchfab.com/3d-models/coconut-drink-2ee04e40790c416a8c4d8f598e5b57a7#download
+
+https://www.youtube.com/watch?v=FbwZAyzo6Kc
+
+https://sketchfab.com/3d-models/beach-chair-blue-stripes-306bd1c648924ca98f22d1d4f1dfb7bf
+
+https://sketchfab.com/3d-models/palm-tree-animated-7a0b418cac4348039b1d6c375bc556e6#download
