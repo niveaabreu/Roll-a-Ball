@@ -23,3 +23,9 @@ https://www.youtube.com/watch?v=FbwZAyzo6Kc
 https://sketchfab.com/3d-models/beach-chair-blue-stripes-306bd1c648924ca98f22d1d4f1dfb7bf
 
 https://sketchfab.com/3d-models/palm-tree-animated-7a0b418cac4348039b1d6c375bc556e6#download
+
+https://www.youtube.com/watch?v=JSQKW1fsFPY
+
+https://www.youtube.com/watch?v=zEeD6dfvf0Q
+
+https://www.youtube.com/watch?v=XrNjMdc4yQ4

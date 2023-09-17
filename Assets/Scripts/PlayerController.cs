@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody rb;
 	private int count;
 
+	public AudioSource pickupSound;
+
 	// At the start of the game..
 	void Start ()
 	{
@@ -38,6 +40,8 @@ public class PlayerController : MonoBehaviour {
 
                 // Set the text property of the Win Text UI to an empty string, making the 'You Win' (game over message) blank
         winTextObject.SetActive(false);
+
+		pickupSound.Stop();
 	}
 
 	void Update(){
@@ -68,6 +72,8 @@ public class PlayerController : MonoBehaviour {
 
 			// Add one to the score variable 'count'
 			count = count + 1;
+
+			pickupSound.Play();
 
 			// Run the 'SetCountText()' function (see below)
 			SetCountText ();
