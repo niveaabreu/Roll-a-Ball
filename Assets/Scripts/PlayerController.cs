@@ -25,11 +25,16 @@ public class PlayerController : MonoBehaviour {
 
 	public AudioSource pickupSound;
 
+	public TextMeshProUGUI velocidadeTexto;
+
+	public AudioSource velocidadeSom;
+
 	// At the start of the game..
 	void Start ()
 	{
 		// Assign the Rigidbody component to our private rb variable
 		rb = GetComponent<Rigidbody>();
+		velocidadeTexto.text = "Velocidade: "+ this.speed.ToString();
 
 		// Set the count to zero 
 		count = 0;
@@ -42,12 +47,13 @@ public class PlayerController : MonoBehaviour {
         winTextObject.SetActive(false);
 
 		pickupSound.Stop();
+		velocidadeSom.Stop();
 	}
 
 	void Update(){
 		if (tempo > 0){
 			tempo = tempo - Time.deltaTime;
-			tempoTexto.text = Convert.ToInt32(tempo).ToString();
+			tempoTexto.text = "Tempo: "+Convert.ToInt32(tempo).ToString();
 		}
 		else{
 			SceneManager.LoadScene("Scenes/over");
@@ -63,6 +69,21 @@ public class PlayerController : MonoBehaviour {
 		rb.AddForce (movement * speed);
 	}
 
+	void OnCollisionEnter (Collision collision){
+		if (collision.gameObject.CompareTag("Collision"))
+		{
+
+			// Add one to the score variable 'count'
+			this.speed -= (float) 0.5;
+			velocidadeTexto.color = Color.red;
+			velocidadeTexto.text = "Velocidade: "+ this.speed.ToString();
+			velocidadeSom.Play();
+			if (this.speed <= 0 ){
+				SceneManager.LoadScene("Scenes/over");
+			}
+		}
+	}
+
 	void OnTriggerEnter(Collider other) 
 	{
 		// ..and if the GameObject you intersect has the tag 'Pick Up' assigned to it..
@@ -72,6 +93,10 @@ public class PlayerController : MonoBehaviour {
 
 			// Add one to the score variable 'count'
 			count = count + 1;
+
+			this.speed += (float) 0.25;
+			velocidadeTexto.color = Color.green;
+			velocidadeTexto.text = "Velocidade: "+ this.speed.ToString();
 
 			pickupSound.Play();
 
