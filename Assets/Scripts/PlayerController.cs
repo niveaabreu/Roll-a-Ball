@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour {
 		{
 
 			// Add one to the score variable 'count'
-			this.speed -= (float) 0.5;
+			this.speed -= (float) 2.5;
 			velocidadeTexto.color = Color.red;
 			velocidadeTexto.text = "Velocidade: "+ this.speed.ToString();
 			velocidadeSom.Play();
