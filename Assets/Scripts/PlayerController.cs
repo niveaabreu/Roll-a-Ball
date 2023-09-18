@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour {
 		// Set the count to zero 
 		count = 0;
 
-		tempo = 60.0f;
+		tempo = 40.0f;
 
 		SetCountText ();
 
